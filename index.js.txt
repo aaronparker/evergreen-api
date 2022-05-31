@@ -1,3 +1,5 @@
+// Javascript version that uses JSON files on the file system
+
 var fs = require("fs");
 const path = require("path");
 
