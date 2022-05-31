@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy-Worker
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     branches:
       - main
     paths:
+      - ".github/workflows/deploy-worker.yml"
       - "index.js"
       - "wrangler.toml"
       - "package.json"
@@ -23,3 +24,4 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
