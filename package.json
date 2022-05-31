@@ -1,7 +1,7 @@
 {
-  "name": "cloudflare-worker-example-rest-api",
+  "name": "evergreen",
   "version": "1.0.0",
-  "description": "Cloudflare worker example app, using the cloudflare-worker-rest-api package",
+  "description": "Evergreen API running on Cloudflare Workers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajtatata/cloudflare-worker-example-rest-api.git"
+    "url": "git+https://github.com/aaronparker/workers.git"
   },
-  "author": "Flavio Rajta",
-  "license": "ISC",
+  "author": "Aaron Parker",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/rajtatata/cloudflare-worker-example-rest-api/issues"
+    "url": "https://github.com/aaronparker/workers/issues"
   },
-  "homepage": "https://github.com/rajtatata/cloudflare-worker-example-rest-api#readme",
+  "homepage": "https://github.com/aaronparker/workers#readme",
   "keywords": [
     "express",
     "expressjs",
