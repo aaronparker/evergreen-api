@@ -6,13 +6,13 @@ app.get("/app/:appId", async (req, res) => {
   const word = req.params.appId;
   console.log("Param: " + word)
   let data = await EVERGREEN.get(word);
-  return res.send(data);
+  return res.send(JSON.parse(data));
 });
 
 app.get("/apps", async (req, res) => {
   console.log("getApps")
   let data = await EVERGREEN.get("_AllApps");
-  return res.send(data);
+  return res.send(JSON.parse(data));
 });
 
 addEventListener('fetch', event => {
