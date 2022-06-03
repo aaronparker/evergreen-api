@@ -7,7 +7,7 @@ app.get("/app/:appId", async (req, res) => {
   const word = req.params.appId;
   console.log("get app: " + word + ".");
 
-  let data = await EVERGREEN.get(word);
+  let data = await EVERGREEN.get(word.toLowerCase());
 
   if (data === null) {
     console.log("No data found.");
@@ -28,7 +28,7 @@ app.get("/apps", async (req, res) => {
   console.log("get all apps.")
   console.log(req.params)
 
-  let data = await EVERGREEN.get("_AllApps");
+  let data = await EVERGREEN.get("_allapps");
 
   if (data === null) {
     console.log("No data found.");
