@@ -1,12 +1,23 @@
 name = "evergreen-api"
-#type = "webpack"
-main = "index.js"
+main = "src/index.js"
 workers_dev = true
-# node_compat = true
 compatibility_date = "2022-05-30"
-#webpack_config = "webpack.config.js"
-#account_id = "_your_account_id_"
-#zone_id = "_your_zone_id_"
+account_id = "3f3a99ad15db52fca58be0e080912991"
+vars = { ENVIRONMENT = "dev" }
+
+[env.staging]
+name = "evergreen-api-staging"
+vars = { ENVIRONMENT = "staging" }
+# routes = [
+#     "evergreen-api-staging.stealthpuppy.workers.dev/*"
+# ]
+
+[env.production]
+name = "evergreen-api"
+vars = { ENVIRONMENT = "production" }
+# routes = [
+#   "evergreen-api.stealthpuppy.workers.dev/*"
+# ]
 
 kv_namespaces = [
     { binding = "EVERGREEN", id = "037069e7da3e4944be2cbc97c92409a5" }

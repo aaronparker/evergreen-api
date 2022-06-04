@@ -2,7 +2,7 @@
   "name": "evergreen",
   "version": "1.0.0",
   "description": "Evergreen API running on Cloudflare Workers.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "wrangler publish"
