@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - ".github/workflows/deploy-worker.yml"
-      - "index.js"
+      - "src/index.js"
       - "wrangler.toml"
       - "package.json"
       - "package-lock.json"
@@ -20,14 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: NPM install
+      - name: npm install
         id: install
         shell: bash
         run: |
           cd "${{ github.workspace }}"
           npm install
 
-      - name: Publish
+      - name: wrangler publish production
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}

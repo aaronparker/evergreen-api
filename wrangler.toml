@@ -22,13 +22,3 @@ vars = { ENVIRONMENT = "production" }
 kv_namespaces = [
     { binding = "EVERGREEN", id = "037069e7da3e4944be2cbc97c92409a5" }
 ]
-
-# [env.staging]
-# kv_namespaces = [
-#     { binding = "EVERGREEN", preview_id = "cbd95467b293457c87a8c6233307ae0f" }
-# ]
-
-# [env.production]
-# kv_namespaces = [
-#     { binding = "EVERGREEN", id = "037069e7da3e4944be2cbc97c92409a5" }
-# ]
