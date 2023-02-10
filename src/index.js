@@ -37,6 +37,18 @@ app.get("/apps", async (req, res) => {
   }
 });
 
+// Return a message if someone calls /endpoints
+app.get('/endpoints', async (req, res) => {
+  console.log(req);
+  let headers = new Headers();
+  headers.set('Content-Type', 'application/json');
+  
+  return new Response('{message: "Method not found. Supported endpoint calls are /endpoints/updates and /endpoints/downloads.}', {
+    status: 404,
+    headers: headers
+  });
+});
+
 // Returns endpoints data for URLs used by Evergreen
 app.get("/endpoints/updates", async (req, res) => {
   console.log("get endpoints from Evergreen manifests.")
