@@ -37,6 +37,34 @@ app.get("/apps", async (req, res) => {
   }
 });
 
+// Returns endpoints data for URLs used by Evergreen
+app.get("/endpoints/updates", async (req, res) => {
+  console.log("get endpoints from Evergreen manifests.")
+  console.log(req.params)
+
+  let data = await EVERGREEN.get("endpoints-updates");
+
+  if (data === null) {
+    console.log("No data found.");
+  } else {
+    return res.send(JSON.parse(data));
+  }
+});
+
+// Returns endpoints data for URLs used by Evergreen
+app.get("/endpoints/downloads", async (req, res) => {
+  console.log("get endpoints from downloads returned by Evergreen.")
+  console.log(req.params)
+
+  let data = await EVERGREEN.get("endpoints-downloads");
+
+  if (data === null) {
+    console.log("No data found.");
+  } else {
+    return res.send(JSON.parse(data));
+  }
+});
+
 // Return data for /*
 app.get('/', async (req, res) => {
   console.log(req);
