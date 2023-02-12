@@ -56,6 +56,38 @@ paths:
               schema:
                 type: array
                 items: {"$ref":"#/components/schemas/app"}
+  '/endpoints/updates':
+    get:
+      tags:
+        - endpoints
+      summary: Returns the list of endpoints (hostnames) used by Evergreen when returning version numbers and downloads.
+      operationId: endpoints-updates
+      description: |
+        Returns the list of endpoints (hostnames) used by Evergreen when returning version numbers and downloads.
+      responses:
+        '200':
+          description: Returns the list of endpoints
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {"$ref":"#/components/schemas/endpoints-updates"}
+  '/endpoints/downloads':
+    get:
+      tags:
+        - endpoints
+      summary: Returns the list of endpoints (hostnames) used by Evergreen when downloading application installers.
+      operationId: endpoints-downloads
+      description: |
+        Returns the list of endpoints (hostnames) used by Evergreen when downloading application installers.
+      responses:
+        '200':
+          description: Returns the list of endpoints
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {"$ref":"#/components/schemas/endpoints-downloads"}
 components:
   schemas:
     apps:
@@ -86,3 +118,26 @@ components:
         URI:
           type: string
           example: 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/df5f91af-5996-41be-b122-e2c697f911fe/MicrosoftEdgeBetaEnterpriseX64.msi'
+    endpoints-updates:
+      type: object
+      required:
+        - Application
+        - Endpoint
+      properties:
+        Application:
+          type: string
+          example: 'Microsoft Edge'
+        Endpoints:
+          type: array
+          items: {edgeupdates.microsoft.com, www.microsoft.com}
+      description: Returns the list of endpoints (hostnames) used by Evergreen when returning version numbers and downloads.
+    endpoints-downloads:
+      type: object
+      properties:
+        Application:
+          type: string
+          example: 'Microsoft Edge'
+        Endpoints:
+          type: array
+          items: {msedge.sf.dl.delivery.mp.microsoft.com}
+      description: Returns the list of endpoints (hostnames) used by Evergreen when downloading application installers.
