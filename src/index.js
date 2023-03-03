@@ -43,7 +43,7 @@ app.get('/endpoints', async (req, res) => {
   let headers = new Headers();
   headers.set('Content-Type', 'application/json');
   
-  return new Response('{message: "Method not found. Supported endpoint calls are /endpoints/updates and /endpoints/downloads.}', {
+  return new Response('{message: "Method not found. Supported endpoint calls are /endpoints/versions and /endpoints/downloads.}', {
     status: 404,
     headers: headers
   });
