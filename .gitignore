@@ -105,3 +105,7 @@ dist
 
 # macOS files
 .DS_Store
+
+# Logs for testing
+logs.json
+logs.csv
